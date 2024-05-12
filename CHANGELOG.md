@@ -1,5 +1,9 @@
 # Histórico de mudanças
 
+## 2024-05-12
+
+Renomeando recursos (ícones, imagens) para evitar erros de _URL encoding_.
+
 ## 2024-05-11
 
 Investigando referências de bibliotecas de estilização
