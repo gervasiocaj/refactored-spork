@@ -2,6 +2,8 @@
 
 ## 2024-05-12
 
+Começando card principal, ainda com problemas com margem no topo da imagem.
+
 Renomeando recursos (ícones, imagens) para evitar erros de _URL encoding_.
 
 ## 2024-05-11
