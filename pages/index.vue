@@ -33,8 +33,8 @@
 
 <script setup lang="ts">
 const bottomSheetButtons = [
-  { label: "Lista", icon: "/_tela01/Icon Lista.svg" },
-  { label: "Mapa", icon: "/_tela01/Icon Mapa.svg" },
+  { label: "Lista", icon: "/_tela01/IconLista.svg" },
+  { label: "Mapa", icon: "/_tela01/IconMapa.svg" },
   { label: "Suporte", icon: "/_tela01/Fones.svg" },
   { label: "Ajustes", icon: "/_tela01/Engrenagem.svg" },
 ];
