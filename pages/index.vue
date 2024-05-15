@@ -3,7 +3,7 @@
     <header id="bottom-nav" class="absolute inset-x-0 bottom-0 w-full z-50">
       <div class="grid grid-flow-col gap-1 justify-stretch w-full h-full">
         <button
-          class="bg-gray-300 text-blue-900 p-3"
+          class="bg-gray-300 active:bg-gray-400 text-blue-900 p-3"
           v-for="btn in bottomSheetButtons"
         >
           <div class="flex justify-center gap-2 items-center">
@@ -13,34 +13,59 @@
         </button>
       </div>
     </header>
-    <div id="content" class="flex flex-col-reverse h-svh min-h-svh">
-      <div id="main" class="basis-2/3 shrink-0 -mt-8 bg-white rounded-t-3xl">
-        <button
-          class="m-4 p-4 rounded bg-green-400 hover:ring z-30"
-          @click="dialog?.showModal()"
+    <div id="content" class="flex flex-col-reverse">
+      <div
+        id="main"
+        class="basis-2/3 relative top-[-100px] bg-white rounded-t-3xl z-30"
+      >
+        <p class="font-bold mt-8 text-4xl text-blue-800 mx-8">
+          Como ficam meus benefícios?
+        </p>
+        <div
+          class="grid grid-cols-2 gap-4 content-stretch mt-8 mx-8 lg:max-w-[600px]"
         >
-          Mostrar pop-up
-        </button>
+          <button
+            v-for="bnf in mainBenefits"
+            class="border-2 active:bg-gray-100 border-blue-900/50 rounded-xl flex flex-col items-center py-8 aspect-square justify-center gap-5"
+            @click="dialog?.showModal()"
+          >
+            <img class="h-14" :src="bnf.icon" />
+            <p class="text-3xl text-center text-gray-500">{{ bnf.label }}</p>
+          </button>
+        </div>
       </div>
-      <div id="background" class="basis-1/3">
+      <div id="background" class="basis-1/4 bg-gray-700">
         <img
           src="/_tela01/close-up.png"
-          class="object-cover h-full w-svw z-10"
+          class="z-10 object-cover mx-auto lg:max-h-[500px]"
         />
         <button>
-          <img src="/_tela01/Bt_X.svg" class="absolute top-0 end-0 m-4 z-20" />
+          <img
+            src="/_tela01/Bt_X.svg"
+            class="absolute top-0 end-0 m-4 h-10 w-10 z-20"
+          />
         </button>
       </div>
     </div>
 
-    <dialog ref="dialog" class="p-8 backdrop:bg-black/40 w-48">
-      <p>Vídeo</p>
-      <button
-        class="m-4 p-4 rounded bg-green-400 hover:ring float-end"
-        @click="dialog?.close()"
-      >
-        OK
-      </button>
+    <dialog
+      ref="dialog"
+      class="p-8 mx-4 w-screen h-fit rounded-xl backdrop:bg-black/40"
+    >
+      <div class="w-full h-full flex flex-col">
+        <button class="hover:ring self-end -mt-4" @click="dialog?.close()">
+          <img src="/_tela01/Bt_X.svg" class="w-12 h-12 mb-2 z-20" />
+        </button>
+        <iframe
+          class="w-full aspect-video mx-auto"
+          src="https://www.youtube.com/embed/BIhdF4gR9bQ"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
     </dialog>
   </div>
 </template>
@@ -51,6 +76,11 @@ const bottomSheetButtons = [
   { label: "Mapa", icon: "/_tela01/IconMapa.svg" },
   { label: "Suporte", icon: "/_tela01/Fones.svg" },
   { label: "Ajustes", icon: "/_tela01/Engrenagem.svg" },
+];
+
+const mainBenefits = [
+  { label: "Plano de Saúde", icon: "/_tela01/IconPlano.svg" },
+  { label: "Previdência Privada", icon: "/_tela01/IconPrevidencia.svg" },
 ];
 
 const dialog = ref<HTMLDialogElement>();
