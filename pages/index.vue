@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <header id="bottom-nav" class="absolute inset-x-0 bottom-0 w-full z-50">
+    <header id="bottom-nav" class="fixed inset-x-0 bottom-0 w-full z-50">
       <div class="grid grid-flow-col gap-1 justify-stretch w-full h-full">
         <button
           class="bg-gray-300 active:bg-gray-400 text-blue-900 p-3"

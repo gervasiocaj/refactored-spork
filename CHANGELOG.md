@@ -2,6 +2,8 @@
 
 ## 2024-05-15 (disponível em https://refactored-spork-90y.pages.dev)
 
+Conserta barra de navegação para dispositivos móveis na horizontal.
+
 Compreendendo melhor o posicionamento relativo no CSS, foi possível corrigir a
 exibição da imagem de fundo. Tomei algumas liberdades na responsividade para
 telas maiores, como plano de fundo cinza, imagem centralizada e largura fixa,
