@@ -26,7 +26,7 @@
         >
           <button
             v-for="bnf in mainBenefits"
-            class="border-2 active:bg-gray-100 border-blue-900/50 rounded-xl flex flex-col items-center py-8 aspect-square justify-center gap-5"
+            class="border-2 active:bg-gray-100 border-blue-900/50 rounded-xl flex flex-col items-center justify-center gap-5 py-8 max-lg:landscape:py-4 max-lg:landscape:aspect-auto aspect-square"
             @click="dialog?.showModal()"
           >
             <img class="h-14" :src="bnf.icon" />
@@ -37,7 +37,7 @@
       <div id="background" class="basis-1/4 bg-gray-700">
         <img
           src="/_tela01/close-up.png"
-          class="z-10 object-cover mx-auto lg:max-h-[500px]"
+          class="z-10 object-cover mx-auto lg:max-h-[500px] max-lg:landscape:max-h-[250px]"
         />
         <button>
           <img
